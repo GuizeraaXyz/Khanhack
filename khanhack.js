@@ -66,7 +66,7 @@ const findAndClickByClass = className => { const element = document.querySelecto
 
 function sendToast(text, duration=5000, gravity='bottom') { Toastify({ text: text, duration: duration, gravity: gravity, position: "center", stopOnFocus: true, style: { background: "#000000" } }).showToast(); };
 
-async function showSplashScreen() { splashScreen.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity 0.5s ease;user-select:none;color:white;font-family:MuseoSans,sans-serif;font-size:30px;text-align:center;"; splashScreen.innerHTML = '<span style="color:white;">KHANWARE</span><span style="color:#72ff72;"> MODIFICADO POR GuizeiraaXyz</span>'; document.body.appendChild(splashScreen); setTimeout(() => splashScreen.style.opacity = '1', 10);};
+async function showSplashScreen() { splashScreen.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity 0.5s ease;user-select:none;color:white;font-family:MuseoSans,sans-serif;font-size:30px;text-align:center;"; splashScreen.innerHTML = '<span style="color:white;">Khan Academy é uma merda🤣</span><span style="color:#4682B4;"> FEITO POR GuizeiraaXyz</span>'; document.body.appendChild(splashScreen); setTimeout(() => splashScreen.style.opacity = '1', 10);};
 async function hideSplashScreen() { splashScreen.style.opacity = '0'; setTimeout(() => splashScreen.remove(), 1000); };
 
 async function loadScript(url, label) { return fetch(url).then(response => response.text()).then(script => { loadedPlugins.push(label); eval(script); }); }
@@ -214,7 +214,7 @@ function setupMenu() {
         (function calcFPS() { if (++frameCount && performance.now() - lastFrameTime >= 1000) { fps = Math.round(frameCount * 1000 / (performance.now() - lastFrameTime)); frameCount = 0; lastFrameTime = performance.now(); } requestAnimationFrame(calcFPS); })();
         const getTime = () => new Date().toLocaleTimeString();
         const update = async () => statsPanel.innerHTML = `
-            <span style="text-shadow: -1px 0.5px 0 #p, -2px 0px 0 #2f672e;">KW</span>
+            <span style="text-shadow: -1px 0.5px 0 #p, -2px 0px 0 #2f672e;">Painelzonho da maldade 😈</span>
             <span style="margin: 0 8px;">|</span><span>${fps}fps</span>
             <span style="margin: 0 8px;">|</span><span>${await getPing()}ms</span>
             <span style="margin: 0 8px;">|</span><span>${getTime()}</span>
@@ -263,7 +263,7 @@ function setupMain(){
                     if(itemData.question.content[0] === itemData.question.content[0].toUpperCase()){
                         itemData.answerArea = { "calculator": false, "chi2Table": false, "periodicTable": false, "tTable": false, "zTable": false }
                         itemData.question.content = phrases[Math.floor(Math.random() * phrases.length)] + `[[☃ radio 1]]`;
-                        itemData.question.widgets = { "radio 1": { options: { choices: [ { content: "Resposta correta.", correct: true }, { content: "Resposta incorreta.", correct: false } ] } } };
+                        itemData.question.widgets = { "radio 1": { options: { choices: [ { content: "Resposta_correta.", correct: true }, { content: "Resposta_incorreta.", correct: false } ] } } };
                         responseObj.data.assessmentItem.item.itemData = JSON.stringify(itemData);
                         sendToast("🔓 Questão exploitada.", 1000);
                         return new Response(JSON.stringify(responseObj), { status: originalResponse.status, statusText: originalResponse.statusText, headers: originalResponse.headers });
